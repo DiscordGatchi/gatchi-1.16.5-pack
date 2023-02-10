@@ -3,12 +3,6 @@ name: Create Archive
 on:
   push:
     branches: [main]
-  paths:
-    - 'version'
-    - 'mods/**'
-    - 'config/**'
-    - 'bin/**'
-    - 'shaderpacks/**'
 
 jobs:
   create-and-deploy-pack:
