@@ -24,6 +24,7 @@ jobs:
           message: Latest release (${{ steps.version.outputs.version }})
           force_push_tag: true
           no_verify_tag: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Tag ${{ steps.version.outputs.version }}
         uses: rickstaa/action-create-tag@v1
@@ -32,6 +33,7 @@ jobs:
           message: Release ${{ steps.version.outputs.version }}
           force_push_tag: true
           no_verify_tag: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Archive Release Contents
         uses: thedoctor0/zip-release@0.7.1
