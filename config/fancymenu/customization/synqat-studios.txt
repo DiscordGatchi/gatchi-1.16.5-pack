@@ -1,0 +1,61 @@
+type = menu
+
+customization-meta {
+  identifier = de.keksuccino.drippyloadingscreen.customization.DrippyOverlayScreen
+  randomgroup = 1
+  renderorder = foreground
+  randommode = false
+  randomonlyfirsttime = false
+}
+
+customization {
+  keepaspectratio = false
+  action = backgroundoptions
+}
+
+customization {
+  orientation = top-left
+  hidden = true
+  x = 92
+  width = 260
+  action = deep_customization_element:drippy_overlay_logo
+  actionid = 4817924c-7ae0-4925-9c11-fcb9636134bc1675989227014
+  y = 98
+  height = 64
+}
+
+customization {
+  custom_color_hex = #383147
+  orientation = top-left
+  hidden = false
+  x = -1000000
+  width = 0
+  action = deep_customization_element:drippy_overlay_background
+  actionid = b9915511-54f4-4908-9401-5fe7cff439721675989227014
+  y = -1000000
+  height = 0
+}
+
+customization {
+  custom_color_hex = #a995d5
+  orientation = top-left
+  hidden = false
+  x = 92
+  width = 260
+  action = deep_customization_element:drippy_overlay_progress_bar
+  actionid = 7d0ed2c8-1635-4692-a852-8d528813e84f1675989227014
+  y = 212
+  height = 10
+}
+
+customization {
+  path = config/assets/synqat-studios.png
+  orientation = mid-centered
+  x = -130
+  width = 260
+  action = addtexture
+  actionid = 8bb9476b-de91-45f2-9b21-ee8767cf376a1675989846952
+  y = -31
+  height = 62
+}
+
