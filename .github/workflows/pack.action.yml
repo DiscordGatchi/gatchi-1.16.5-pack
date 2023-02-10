@@ -1,9 +1,12 @@
 name: Create Archive
 
-on: [push]
+on:
+  push:
+    branches: [main]
 
 jobs:
-  build:
+  create-and-deploy-pack:
+    name: Create and Deploy Pack
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
