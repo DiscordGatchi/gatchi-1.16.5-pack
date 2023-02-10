@@ -6,23 +6,49 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Fetch Version
         id: version
-        run: echo ::set-output name=version::$(cat "version")
+        run: echo ::set-output name=version::v$(cat "version")
+
+      - name: Create Tag Latest
+        uses: rickstaa/action-create-tag@v1
+        with:
+          tag: ${{ steps.version.outputs.version }}
+          message: Latest release (${{ steps.version.outputs.version }})
+          force_push_tag: true
+          no_verify_tag: true
+
+      - name: Create Tag ${{ steps.version.outputs.version }}
+        uses: rickstaa/action-create-tag@v1
+        with:
+          tag: ${{ steps.version.outputs.version }}
+          message: Release ${{ steps.version.outputs.version }}
+          force_push_tag: true
+          no_verify_tag: true
 
       - name: Archive Release Contents
         uses: thedoctor0/zip-release@0.7.1
         with:
           type: 'zip'
-          filename: 'release.zip'
+          filename: synpack.${{ steps.version.outputs.version }}.zip
           exclusions: '*.git*'
 
       - name: Upload Release Artifacts
         uses: ncipollo/release-action@v1.12.0
         with:
-          artifacts: 'release.zip'
+          artifacts: synpack.${{ steps.version.outputs.version }}.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: latest
+          name: Latest release (${{ steps.version.outputs.version }})
+
+      - name: Upload Release Artifacts
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          artifacts: synpack.${{ steps.version.outputs.version }}.zip
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ steps.version.outputs.version }}
           name: Release ${{ steps.version.outputs.version }}
