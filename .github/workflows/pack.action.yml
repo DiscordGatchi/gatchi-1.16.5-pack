@@ -3,6 +3,12 @@ name: Create Archive
 on:
   push:
     branches: [main]
+  paths:
+    - 'version'
+    - 'mods/**'
+    - 'config/**'
+    - 'bin/**'
+    - 'shaderpacks/**'
 
 jobs:
   create-and-deploy-pack:
@@ -31,7 +37,7 @@ jobs:
         with:
           type: 'zip'
           filename: synpack.${{ steps.version.outputs.version }}.zip
-          exclusions: '*.git*'
+          exclusions: '*.git* server'
 
       - name: Upload Release Artifacts
         uses: ncipollo/release-action@v1.12.0

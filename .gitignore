@@ -1,9 +1,21 @@
 /*
-!bin
-!version
+
+# git stuff
 !.github
 !.gitignore
+!version
 !README.md
+
+# client stuff
+!bin
 !config/
 !mods/
 !shaderpacks/
+
+# server stuff
+!server/config
+!server/mods
+!server/eula.txt
+!server/server-icon.png
+!server/server.properties
+!server/fabric-server-launcher-1.19.3.jar
