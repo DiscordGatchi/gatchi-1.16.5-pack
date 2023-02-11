@@ -94,6 +94,8 @@ jobs:
         uses: mathieudutour/github-tag-action@v6.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          release_branches: feat/packwiz/docker-and-server-deploy
+
 
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
@@ -101,7 +103,6 @@ jobs:
           tag: ${{ steps.tag_version.outputs.new_tag }}
           name: Release ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
-          draft: true
 
       - name: Update the pack.toml version
         uses: colathro/toml-editor@1.1.0
@@ -116,6 +117,8 @@ jobs:
           echo "New version: ${{ steps.tag_version.outputs.new_version }}"
           echo "Previous version: ${{ steps.tag_version.outputs.previous_version }}"
           echo "Changelog: ${{ steps.tag_version.outputs.changelog }}"
+          echo "Pack.toml version: ${{ cat pack.toml | grep version }}"
+          echo "Release name: ${{ steps.create_release.outputs.name }}"
 
 #      - name: Download server mods
 #        uses: actions/download-artifact@v3
