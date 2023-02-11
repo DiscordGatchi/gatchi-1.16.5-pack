@@ -31,7 +31,7 @@ jobs:
       - name: Get server mods
         run: |
           mkdir server && cd server
-          java -jar ../packwiz-installer-bootstrap.jar --bootstrap-no-update -g -s server http://localhost:8080/pack.toml
+          java -jar ../packwiz-installer-bootstrap.jar -g -s server http://localhost:8080/pack.toml
 
       - name: Upload server mods
         uses: actions/upload-artifact@v3
