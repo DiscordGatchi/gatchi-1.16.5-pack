@@ -89,53 +89,61 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install semver
-        run: npm install -g semver
-
-      - uses: SebRollen/toml-action@v1.0.1
-        id: pack_toml
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.1
         with:
-          file: 'pack.toml'
-          field: 'version'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Last Commit Type (major|minor|patch)
-        id: last_commit_type
-        run: |
-          echo "::set-output name=type::$(git log -1 --pretty=%B | sed -n 's/^.*\[\([a-z]*\)\].*$/\1/p')"
-
-      - name: Increment and return version
-        id: version
-        run: |
-          echo ::set-output name=version::$(semver -i ${{ steps.last_commit_type.outputs.type }} ${{ steps.pack_toml.outputs.value }})
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}
+          draft: true
 
       - name: Update the pack.toml version
         uses: colathro/toml-editor@1.1.0
         with:
           file: "pack.toml"
           key: "version"
-          value: ${{ steps.version.outputs.version }}
+          value: ${{ steps.tag_version.outputs.new_version || steps.tag_version.outputs.previous_version }}
 
-      - name: DEBUG TEST
-        run: |
-          echo ${{ steps.version.outputs.version }}
-          echo ${{ steps.last_commit_type.outputs.type }}
-          echo ${{ steps.pack_toml.outputs.value }}
-          echo $(cat pack.toml)
-          echo $(git log -1 --pretty=%B | sed -n 's/^.*\[\([a-z]*\)\].*$/\1/p')
-#
-#      - name: Create a new release
-#        id: create_release
-#        uses: actions/create-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          tag_name: ${{ github.ref }}
-#          release_name: Release ${{ github.ref }}
-#          draft: false
-#          prerelease: false
-#
-#      - name: Download server mods
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: server-mods
-#          path: server/
+      - name: Download server mods
+        uses: actions/download-artifact@v3
+        with:
+          name: server-mods
+          path: server/
+
+      - name: Download client mods
+        uses: actions/download-artifact@v3
+        with:
+          name: client-mods
+          path: client/
+
+      - name: Zip server mods
+        run: zip -r server-mods.zip server/
+
+      - name: Zip client mods
+        run: zip -r client-mods.zip client/
+
+      - name: Upload server mods
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./server-mods.zip
+          asset_name: server-mods.zip
+          asset_content_type: application/zip
+
+      - name: Upload client mods
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./client-mods.zip
+          asset_name: client-mods.zip
+          asset_content_type: application/zip
