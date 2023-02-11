@@ -160,6 +160,14 @@ jobs:
           commit_author: "GitHub Actions <github-actions[bot]@users.noreply.github.com>"
           file_pattern: "pack.toml"
 
+      - name: Build and Deploy Dockerfile to GitHub
+        uses: docker/build-push-action@v2
+        with:
+          tags: ${{ steps.tag_version.outputs.new_tag }}
+          file: ./Dockerfile
+          push: true
+          context: .
+
       - name: Failure Cleanup - Remove Tag & Release
         if: failure()
         uses: dev-drprasad/delete-tag-and-release@v0.2.0
