@@ -97,31 +97,6 @@ jobs:
           # Change this to our official release branch later (probably default/main)
           release_branches: 'feat/packwiz/docker-and-server-deploy'
 
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        id: create_release
-        with:
-          tag: ${{ steps.tag_version.outputs.new_tag }}
-          name: ${{ steps.tag_version.outputs.new_tag }}
-          body: ${{ steps.tag_version.outputs.changelog }}
-
-      - name: Update the pack.toml version
-        uses: colathro/toml-editor@1.1.0
-        with:
-          file: "pack.toml"
-          key: "version"
-          value: ${{ steps.tag_version.outputs.new_version || steps.tag_version.outputs.previous_version }}
-
-      - name: Commit updated pack.toml
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Bump pack.toml version to ${{ steps.tag_version.outputs.new_version || steps.tag_version.outputs.previous_version }}"
-          commit_options: "--no-verify"
-          commit_user_name: "GitHub Actions"
-          commit_user_email: "github-actions[bot]@users.noreply.github.com"
-          commit_author: "GitHub Actions <github-actions[bot]@users.noreply.github.com>"
-          file_pattern: "pack.toml"
-
       - name: Download server mods
         uses: actions/download-artifact@v3
         with:
@@ -139,6 +114,21 @@ jobs:
 
       - name: Zip client
         run: zip -r client.zip client/
+
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        id: create_release
+        with:
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          name: ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}
+
+      - name: Update the pack.toml version
+        uses: colathro/toml-editor@1.1.0
+        with:
+          file: "pack.toml"
+          key: "version"
+          value: ${{ steps.tag_version.outputs.new_version || steps.tag_version.outputs.previous_version }}
 
       - name: Upload server mods
         uses: actions/upload-release-asset@v1
@@ -159,6 +149,16 @@ jobs:
           asset_path: ./client.zip
           asset_name: client.zip
           asset_content_type: application/zip
+
+      - name: Commit updated pack.toml
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Bump pack.toml version to ${{ steps.tag_version.outputs.new_version || steps.tag_version.outputs.previous_version }}"
+          commit_options: "--no-verify"
+          commit_user_name: "GitHub Actions"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "GitHub Actions <github-actions[bot]@users.noreply.github.com>"
+          file_pattern: "pack.toml"
 
       - name: Failure Cleanup - Remove Tag & Release
         if: failure()
