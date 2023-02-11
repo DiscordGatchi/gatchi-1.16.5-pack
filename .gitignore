@@ -19,3 +19,8 @@ server/banned-ips.json
 server/ops.json
 server/usercache.json
 server/whitelist.json
+
+# IDE specific
+.idea
+.vsc
+.vs
