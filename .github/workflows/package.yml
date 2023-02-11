@@ -23,8 +23,10 @@ jobs:
           directory: ${{ github.workspace }}
           port: 8080
           no-cache: true
-          allowed-methods: ["GET", "HEAD"]
-          content-types: { "toml": "text/plain" }
+          allowed-methods: |
+            ["GET", "HEAD"]
+          content-types: |
+            { "toml": "text/plain" }
 
       - name: Setup packwiz-installer
         run: |
