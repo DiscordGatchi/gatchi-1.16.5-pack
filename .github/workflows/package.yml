@@ -47,10 +47,11 @@ jobs:
         with:
           name: client-mods
           path: client/
+
   test:
     name: Test Server & Generate Config
     runs-on: ubuntu-latest
-    needs: mods
+    needs: release
 
     steps:
       - name: Checkout code
@@ -76,3 +77,65 @@ jobs:
 
       - name: Check server folder
         run: ls server
+
+  release:
+    name: Release & Upload Zipped Mod Files
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install semver
+        run: npm install -g semver
+
+      - uses: SebRollen/toml-action@v1.0.1
+        id: pack_toml
+        with:
+          file: 'pack.toml'
+          field: 'version'
+
+      - name: Last Commit Type (major|minor|patch)
+        id: last_commit_type
+        run: |
+          echo "::set-output name=type::$(git log -1 --pretty=%B | sed -n 's/^.*\[\([a-z]*\)\].*$/\1/p')"
+
+      - name: Increment and return version
+        id: version
+        run: |
+          echo ::set-output name=version::$(semver -i ${{ steps.last_commit_type.outputs.type }} ${{ steps.pack_toml.outputs.value }})
+
+      - name: Update the pack.toml version
+        uses: colathro/toml-editor@1.1.0
+        with:
+          file: "pack.toml"
+          key: "version"
+          value: ${{ steps.version.outputs.version }}
+
+      - name: DEBUG TEST
+        run: |
+          echo ${{ steps.version.outputs.version }}
+          echo ${{ steps.last_commit_type.outputs.type }}
+          echo ${{ steps.pack_toml.outputs.value }}
+          echo $(cat pack.toml)
+          echo $(git log -1 --pretty=%B | sed -n 's/^.*\[\([a-z]*\)\].*$/\1/p')
+#
+#      - name: Create a new release
+#        id: create_release
+#        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: ${{ github.ref }}
+#          release_name: Release ${{ github.ref }}
+#          draft: false
+#          prerelease: false
+#
+#      - name: Download server mods
+#        uses: actions/download-artifact@v3
+#        with:
+#          name: server-mods
+#          path: server/
