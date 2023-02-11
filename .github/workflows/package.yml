@@ -9,44 +9,44 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-#
-#      - name: Setup Java
-#        uses: actions/setup-java@v3
-#        with:
-#          distribution: oracle
-#          java-version: 17
-#          java-package: jdk
-#
-#      - name: Serve toml files
-#        uses: Eun/http-server-action@v1
-#        with:
-#          directory: ${{ github.workspace }}
-#          port: 8080
-#          no-cache: true
-#          content-types: |
-#            { "toml": "text/plain" }
-#
-#      - name: Get server mods
-#        run: |
-#          mkdir server && cd server
-#          java -jar ../packwiz-installer-bootstrap.jar -g -s server http://localhost:8080/pack.toml
-#
-#      - name: Get client mods
-#        run: |
-#          mkdir client && cd client
-#          java -jar ../packwiz-installer-bootstrap.jar -g -s both http://localhost:8080/pack.toml
-#
-#      - name: Upload server mods
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: server-mods
-#          path: server/
-#
-#      - name: Upload client mods
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: client-mods
-#          path: client/
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: oracle
+          java-version: 17
+          java-package: jdk
+
+      - name: Serve toml files
+        uses: Eun/http-server-action@v1
+        with:
+          directory: ${{ github.workspace }}
+          port: 8080
+          no-cache: true
+          content-types: |
+            { "toml": "text/plain" }
+
+      - name: Get server mods
+        run: |
+          mkdir server && cd server
+          java -jar ../packwiz-installer-bootstrap.jar -g -s server http://localhost:8080/pack.toml
+
+      - name: Get client mods
+        run: |
+          mkdir client && cd client
+          java -jar ../packwiz-installer-bootstrap.jar -g -s both http://localhost:8080/pack.toml
+
+      - name: Upload server mods
+        uses: actions/upload-artifact@v3
+        with:
+          name: server-mods
+          path: server/
+
+      - name: Upload client mods
+        uses: actions/upload-artifact@v3
+        with:
+          name: client-mods
+          path: client/
 
   test:
     name: Test Server & Generate Config
