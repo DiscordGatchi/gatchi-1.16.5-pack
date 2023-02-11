@@ -179,3 +179,7 @@ metafile = true
 file = "mods/your-items-are-safe.pw.toml"
 hash = "c1fdb366bfd528692eecf6d238224e56d453b1b37d305c056950a0915d247e6c"
 metafile = true
+
+[[files]]
+file = "packwiz-installer-bootstrap.jar"
+hash = "a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c"

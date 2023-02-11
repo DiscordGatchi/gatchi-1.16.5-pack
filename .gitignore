@@ -1,2 +1,5 @@
 # Exclude exported zip files
 *.zip
+
+client/
+server/

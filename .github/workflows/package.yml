@@ -1,0 +1,52 @@
+name: Package
+on: [push]
+
+jobs:
+  mods:
+    name: Package Mods
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Java
+        with:
+          distribution: oracle
+          java-version: 17
+          java-package: jre
+
+      - name: Serve files
+        uses: Eun/http-server-action@v1
+        with:
+          directory: ${{ github.workspace }}
+          port: 8080
+          no-cache: true
+          allowed-methods: ["GET", "HEAD"]
+          content-types: { "toml": "text/plain" }
+
+      - name: Setup packwiz-installer
+        run: |
+          wget https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar
+
+      - name: Get server mods
+        run: |
+          mkdir server && cd server
+          java -jar ../packwiz-installer-bootstrap.jar -g -s server http://localhost:8080/pack.toml
+
+      - name: Get client mods
+        run: |
+          mkdir client && cd client
+          java -jar ../packwiz-installer-bootstrap.jar -g -s both http://localhost:8080/pack.toml
+
+      - name: Upload server mods
+        uses: actions/upload-artifact@v3
+        with:
+          name: Server Mods
+          path: server/
+
+      - name: Upload client mods
+        uses: actions/upload-artifact@v3
+        with:
+          name: Client Mods
+          path: client/
