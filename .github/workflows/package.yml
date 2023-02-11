@@ -109,7 +109,17 @@ jobs:
         with:
           file: "pack.toml"
           key: "version"
-          value: ${{ steps.tag_version.outputs.new_version || steps.tag_version.outputs.previous_version }
+          value: ${{ steps.tag_version.outputs.new_version || steps.tag_version.outputs.previous_version }}
+
+      - name: Commit updated pack.toml
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Bump pack.toml version to ${{ steps.tag_version.outputs.new_version || steps.tag_version.outputs.previous_version }}"
+          commit_options: "--no-verify"
+          commit_user_name: "GitHub Actions"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "GitHub Actions <github-actions[bot]@users.noreply.github.com>"
+          file_pattern: "pack.toml"
 
       - name: Download server mods
         uses: actions/download-artifact@v3
