@@ -6,9 +6,11 @@ ENV VERSION=1.18.2
 ENV MEMORY=4G
 EXPOSE 25565
 
-RUN curl -L https://api.github.com/repos/DiscordGatchi/the-gatchi-pack/releases/latest -o /latest-release-data.json
-RUN cat /latest-release-data.json | jq -r '.assets[] | select(.name | contains("server.zip")) | .browser_download_url' > /latest-release-url.txt
-RUN curl -L $(cat /latest-release-url.txt) -o /server.zip
+RUN curl -L https://api.github.com/repos/DiscordGatchi/the-gatchi-pack/releases/latest -o /release-data.json
+RUN cat /release-data.json
+RUN cat /release-data.json | jq -r '.assets[] | select(.name | contains("server.zip")) | .browser_download_url' > /release-url.txt
+RUN cat /release-url.txt
+RUN curl -L $(cat /release-url.txt) -o /server.zip
 
 RUN unzip /server.zip -d /
 
