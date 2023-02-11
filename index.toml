@@ -1,22 +1,6 @@
 hash-format = "sha256"
 
 [[files]]
-file = ".idea/modules.xml"
-hash = "f8d4d8ca0c6bdb382e5ec5c76126c7401f2cb82127d289e0eee5c0d6ab64ebe1"
-
-[[files]]
-file = ".idea/the-gatchi-pack.iml"
-hash = "deb9daeff6b137ecff4952d98a015ff80b65371c9f85f6a52fab5e3f04868c9d"
-
-[[files]]
-file = ".idea/vcs.xml"
-hash = "62be7e0a7f84ab3c35b4d4bafb890a4951d061eadafde1a10aa3f5d0406db5df"
-
-[[files]]
-file = ".idea/workspace.xml"
-hash = "58595c52b8280a71cefbdbf8ad257fe04fff86181535f06c695c2926b33835f1"
-
-[[files]]
 file = "mods/adorn.pw.toml"
 hash = "e59138ddd4931750b1e9c0eebc707eeb4ed08d8e2e7edefdc6cc0046505b9e5e"
 metafile = true
