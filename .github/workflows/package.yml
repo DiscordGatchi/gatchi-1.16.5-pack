@@ -94,6 +94,7 @@ jobs:
         uses: mathieudutour/github-tag-action@v6.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Change this to our official release branch later (probably default/main)
           release_branches: 'feat/packwiz/docker-and-server-deploy'
 
       - name: Create a GitHub release
@@ -108,51 +109,42 @@ jobs:
         with:
           file: "pack.toml"
           key: "version"
-          value: ${{ steps.tag_version.outputs.new_version || steps.tag_version.outputs.previous_version }}
+          value: ${{ steps.tag_version.outputs.new_version || steps.tag_version.outputs.previous_version }
 
-      - name: DEBUG LOG OUTPUTS
-        run: |
-          echo "New tag: ${{ steps.tag_version.outputs.new_tag }}"
-          echo "New version: ${{ steps.tag_version.outputs.new_version }}"
-          echo "Previous version: ${{ steps.tag_version.outputs.previous_version }}"
-          echo "Changelog: ${{ steps.tag_version.outputs.changelog }}"
-          echo "Pack.toml version: $(cat pack.toml | grep version | cut -d '"' -f 2)"
-          echo "Release name: ${{ steps.create_release.outputs.name }}"
+      - name: Download server mods
+        uses: actions/download-artifact@v3
+        with:
+          name: server-mods
+          path: server/
 
-#      - name: Download server mods
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: server-mods
-#          path: server/
-#
-#      - name: Download client mods
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: client-mods
-#          path: client/
-#
-#      - name: Zip server mods
-#        run: zip -r server-mods.zip server/
-#
-#      - name: Zip client mods
-#        run: zip -r client-mods.zip client/
-#
-#      - name: Upload server mods
-#        uses: actions/upload-release-asset@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          upload_url: ${{ steps.create_release.outputs.upload_url }}
-#          asset_path: ./server-mods.zip
-#          asset_name: server-mods.zip
-#          asset_content_type: application/zip
-#
-#      - name: Upload client mods
-#        uses: actions/upload-release-asset@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          upload_url: ${{ steps.create_release.outputs.upload_url }}
-#          asset_path: ./client-mods.zip
-#          asset_name: client-mods.zip
-#          asset_content_type: application/zip
+      - name: Download client mods
+        uses: actions/download-artifact@v3
+        with:
+          name: client-mods
+          path: client/
+
+      - name: Zip server mods
+        run: zip -r server-mods.zip server/
+
+      - name: Zip client mods
+        run: zip -r client-mods.zip client/
+
+      - name: Upload server mods
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./server-mods.zip
+          asset_name: server-mods.zip
+          asset_content_type: application/zip
+
+      - name: Upload client mods
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./client-mods.zip
+          asset_name: client-mods.zip
+          asset_content_type: application/zip
