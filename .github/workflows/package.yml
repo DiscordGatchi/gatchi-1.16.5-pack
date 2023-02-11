@@ -77,6 +77,5 @@ jobs:
       - name: ok what now
         run: ls . server
 
-      - name: ???
-        run: git status
-
+      # - name: Allow Git
+      #   run: git config --global --add safe.directory $(pwd)
