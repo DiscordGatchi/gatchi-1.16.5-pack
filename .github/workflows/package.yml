@@ -96,7 +96,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_branches: 'feat/packwiz/docker-and-server-deploy'
 
-
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:
