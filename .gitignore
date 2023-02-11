@@ -1,5 +1,6 @@
 # Exclude exported zip files
 *.zip
+*.mrpack
 
 client/mods
 client/packwiz*

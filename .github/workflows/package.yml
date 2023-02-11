@@ -33,22 +33,11 @@ jobs:
           mkdir server && cd server
           java -jar ../packwiz-installer-bootstrap.jar -g -s server http://localhost:8080/pack.toml
 
-      - name: Get client mods
-        run: |
-          mkdir client && cd client
-          java -jar ../packwiz-installer-bootstrap.jar -g -s both http://localhost:8080/pack.toml
-
       - name: Upload server mods
         uses: actions/upload-artifact@v3
         with:
           name: server
           path: server/
-
-      - name: Upload client mods
-        uses: actions/upload-artifact@v3
-        with:
-          name: client
-          path: client/
 
   test:
     name: Test Server & Generate Config
@@ -91,23 +80,23 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: '>=1.19.0'
+          cache: true
+
+      - name: Setup Packwiz
+        run: go install github.com/packwiz/packwiz@latest
+
       - name: Download server
         uses: actions/download-artifact@v3
         with:
           name: server
           path: server/
 
-      - name: Download client
-        uses: actions/download-artifact@v3
-        with:
-          name: client
-          path: client/
-
       - name: Zip server
         run: zip -r server.zip server/
-
-      - name: Zip client
-        run: zip -r client.zip client/
 
       - name: Bump version and push tag
         id: tag_version
@@ -141,14 +130,17 @@ jobs:
           asset_name: server.zip
           asset_content_type: application/zip
 
-      - name: Upload client
+      - name: Create mrpack
+        run: packwiz mr export --pack-file ../pack.toml -o client.mrpack
+
+      - name: Upload mrpack
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./client.zip
-          asset_name: client.zip
+          asset_path: ./client.mrpack
+          asset_name: client.mrpack
           asset_content_type: application/zip
 
       - name: Commit updated pack.toml
