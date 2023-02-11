@@ -74,5 +74,10 @@ jobs:
           -e EULA=TRUE \
           itzg/minecraft-server
 
-      - name: Check server folder
-        run: ls server
+      - name: Upload server configs
+        uses: actions/upload-artifact@v3
+        with:
+          name: server-configs
+          path: |
+            server/config
+            server/server.properties
