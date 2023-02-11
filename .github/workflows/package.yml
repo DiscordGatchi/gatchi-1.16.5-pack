@@ -116,7 +116,7 @@ jobs:
           echo "New version: ${{ steps.tag_version.outputs.new_version }}"
           echo "Previous version: ${{ steps.tag_version.outputs.previous_version }}"
           echo "Changelog: ${{ steps.tag_version.outputs.changelog }}"
-          echo "Pack.toml version: ${{ cat pack.toml | grep version }}"
+          echo "Pack.toml version: ${{ $(cat pack.toml | grep version | cut -d '"' -f 2) }}"
           echo "Release name: ${{ steps.create_release.outputs.name }}"
 
 #      - name: Download server mods
