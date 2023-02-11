@@ -63,8 +63,14 @@ jobs:
 
       - name: Run server
         run: |
-        docker run -v $(pwd)/server:/data -e TYPE=FABRIC -e VERSION=1.18.2 -e ENABLE_AUTOSTOP=TRUE -e AUTOSTOP_TIMEOUT_INIT=1 -e EULA=TRUE -e
-MEMORY=4G itzg/minecraft-server
+        docker run itzg/minecraft-server \
+        -v $(pwd)/server:/data \
+        -e TYPE=FABRIC \
+        -e VERSION=1.18.2 \
+        -e MEMORY=4G \
+        -e ENABLE_AUTOSTOP=TRUE \
+        -e AUTOSTOP_TIMEOUT_INIT=1 \
+        -e EULA=TRUE
 
       - name: Check server folder
         run: ls server
