@@ -1,5 +1,21 @@
 # Exclude exported zip files
 *.zip
 
-client/
-server/
+client/mods
+client/packwiz*
+
+server/mods
+server/packwiz*
+server/libraries
+server/logs
+server/versions
+server/world
+server/.*
+server/eula.txt
+server/fabric-server*.jar
+
+server/banned-players.json
+server/banned-ips.json
+server/ops.json
+server/usercache.json
+server/whitelist.json

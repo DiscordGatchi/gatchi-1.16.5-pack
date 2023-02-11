@@ -17,7 +17,7 @@ jobs:
           java-version: 17
           java-package: jdk
 
-      - name: Serve files
+      - name: Serve toml files
         uses: Eun/http-server-action@v1
         with:
           directory: ${{ github.workspace }}
@@ -47,3 +47,35 @@ jobs:
         with:
           name: client-mods
           path: client/
+  test:
+    name: Test Server & Generate Config
+    runs-on: ubuntu-latest
+
+    container:
+      image: itzg/minecraft-server
+      volumes:
+        - ${{ github.workspace }}/server:/data
+      env:
+        TYPE: FABRIC
+        VERSION: 1.18.2
+        MEMORY: 4G
+        ENABLE_AUTOSTOP: TRUE
+        AUTOSTOP_TIMEOUT_INIT: 1
+        EULA: TRUE
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Download server mods
+        uses: actions/download-artifact@v3
+        with:
+          name: server-mods
+          path: server/
+
+      - name: ok what now
+        runs: ls . server
+
+      - name: ???
+        runs: git status
+
