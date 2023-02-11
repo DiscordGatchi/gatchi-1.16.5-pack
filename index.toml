@@ -1,8 +1,29 @@
 hash-format = "sha256"
 
 [[files]]
+file = ".idea/modules.xml"
+hash = "f8d4d8ca0c6bdb382e5ec5c76126c7401f2cb82127d289e0eee5c0d6ab64ebe1"
+
+[[files]]
+file = ".idea/the-gatchi-pack.iml"
+hash = "deb9daeff6b137ecff4952d98a015ff80b65371c9f85f6a52fab5e3f04868c9d"
+
+[[files]]
+file = ".idea/vcs.xml"
+hash = "62be7e0a7f84ab3c35b4d4bafb890a4951d061eadafde1a10aa3f5d0406db5df"
+
+[[files]]
+file = ".idea/workspace.xml"
+hash = "d6726e46eef5d80eb99835708e35044e9a0d1861b1a69a49ac02db03cad2a524"
+
+[[files]]
 file = "mods/adorn.pw.toml"
 hash = "e59138ddd4931750b1e9c0eebc707eeb4ed08d8e2e7edefdc6cc0046505b9e5e"
+metafile = true
+
+[[files]]
+file = "mods/almost-unified.pw.toml"
+hash = "af5f238512ddce293fe81e507bcbaf7f68a7964d8a660e5805be155eb4af20a6"
 metafile = true
 
 [[files]]
@@ -62,7 +83,7 @@ metafile = true
 
 [[files]]
 file = "mods/collective.pw.toml"
-hash = "099442ad6e78f0008d5d5c9b5eaa731cc072ba97c419bb48b53d49511747ca71"
+hash = "4513e06fcab3fb2e33bc1a70ba9ade1656aa4e3a385c578cf486c73463e5cd45"
 metafile = true
 
 [[files]]
@@ -71,13 +92,23 @@ hash = "8fba0e4ab902db91aa0ea239ca65710fdae38d31bae0acf1920002e48ac03ff9"
 metafile = true
 
 [[files]]
+file = "mods/crops-love-rain.pw.toml"
+hash = "cdbeeb56e330eddb26a960c6240d23ad602717b1e3844deb88660f284c5c15fa"
+metafile = true
+
+[[files]]
 file = "mods/croptopia.pw.toml"
 hash = "05d4df9be378eb388f9aaa8ec0377e5c5fe919dbca228a287767176408205ae3"
 metafile = true
 
 [[files]]
+file = "mods/double-doors.pw.toml"
+hash = "c207acc93f24a61d609501c8764be15fa4d52bfbee9c316b828e7cf8442dce90"
+metafile = true
+
+[[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "cf2801fb6961b98ba447381c84e9c86dc76604000e4a94b1fbef7da20cfd520b"
+hash = "f441da2ee20b66f7a72e476057f56f851550168ea4fea436abf674f45dc7e79b"
 metafile = true
 
 [[files]]
@@ -101,8 +132,28 @@ hash = "ef482a5d506e2a86ceef718953c165b3bdb585c1ba3f1364f373c441ce2f2ee2"
 metafile = true
 
 [[files]]
+file = "mods/jade.pw.toml"
+hash = "da079c4953fc1023fdeb3fcdba216c76dd9958c9cd30ed5b738932e7f6563a0c"
+metafile = true
+
+[[files]]
+file = "mods/jamlib.pw.toml"
+hash = "4aaca2ff5a41c228fab619d11241204df5d5eb73e32a9fc7a26d4b98f34e7a5b"
+metafile = true
+
+[[files]]
 file = "mods/lazydfu.pw.toml"
 hash = "b59cda50b7fa539aa9783bb8d87b55ca4e05d0269c9f2e2df69fa2134d0e644f"
+metafile = true
+
+[[files]]
+file = "mods/lightmans-currency.pw.toml"
+hash = "83d5de509020b5eaca8fa945f796f7190143373de9dbf11d19d3efbda56aa013"
+metafile = true
+
+[[files]]
+file = "mods/mcdiscordchat.pw.toml"
+hash = "751086255d0b621d234614449618ce01108bb36c7d7bf305b8096621445d4454"
 metafile = true
 
 [[files]]
@@ -113,6 +164,11 @@ metafile = true
 [[files]]
 file = "mods/modmenu.pw.toml"
 hash = "b4e9564a3b53e008e176341a6e63fcfb33c89eab824fe11c2714d9bc66aa1e32"
+metafile = true
+
+[[files]]
+file = "mods/mods-command.pw.toml"
+hash = "968b2b2c8e1f7de307feb865dd315c2f7620dc45fd0c317085af46a68f99b114"
 metafile = true
 
 [[files]]
@@ -136,13 +192,38 @@ hash = "2a3e59e6c7d3c87985979d01cffb6b0d0bf89d9c71c176ec4e3bcc4f978ea978"
 metafile = true
 
 [[files]]
+file = "mods/rightclickharvest.pw.toml"
+hash = "ccf2d00ef6676f43bebf2b70408b2618aa9fdb738d6ac1727f50f2e54d09bf91"
+metafile = true
+
+[[files]]
 file = "mods/roughly-enough-items.pw.toml"
 hash = "97758fded746824a20f0a14144b071f7f74f53b3ddee9519f432bbaa7c0fe206"
 metafile = true
 
 [[files]]
+file = "mods/show-me-what-you-got.pw.toml"
+hash = "432d99f2c43e5bd7aa703c4eccc9d6e6fe40d9d1e1b7d5c7ea0e305c8aa142da"
+metafile = true
+
+[[files]]
 file = "mods/simple-voice-chat.pw.toml"
 hash = "3f697b25d81fb1586fbf402667cf8b8023751cdeac944ffc63eb0b4fdb3e75dd"
+metafile = true
+
+[[files]]
+file = "mods/styled-chat.pw.toml"
+hash = "1a1252f950fda13a51c64bf839aa0b5e6eb980610334791d0c300125acdb5757"
+metafile = true
+
+[[files]]
+file = "mods/styled-nicknames.pw.toml"
+hash = "cd8ce0429f1d4bb4c4ef4fd09a831955da0c4e1310d607bfbe6480fd11866b52"
+metafile = true
+
+[[files]]
+file = "mods/styledplayerlist.pw.toml"
+hash = "69d2f2ff03c0b5e04e71e14e569b7652613031bc7cc5e9f23db920d132ca9e76"
 metafile = true
 
 [[files]]
@@ -158,6 +239,11 @@ metafile = true
 [[files]]
 file = "mods/vanilla-hammers.pw.toml"
 hash = "a2a39fe993ad407531c4d5458bd6e739053f97ec4b57e8dece5452ee35798a56"
+metafile = true
+
+[[files]]
+file = "mods/vivecraft.pw.toml"
+hash = "ac65ccd9257816b1f156b44b0b2a3decf6a7f915158d7a7c50799287d9e48d11"
 metafile = true
 
 [[files]]
