@@ -21,5 +21,5 @@ RUN mv /server /data
 RUN ls -la /data
 
 RUN rm /server.zip
-RUN rm /latest-release-url.txt
-RUN rm /latest-release-data.json
+RUN rm /release-url.txt
+RUN rm /release-data.json
