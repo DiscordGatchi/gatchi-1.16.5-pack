@@ -23,14 +23,8 @@ jobs:
           directory: ${{ github.workspace }}
           port: 8080
           no-cache: true
-          allowed-methods: |
-            ["GET", "HEAD"]
           content-types: |
             { "toml": "text/plain" }
-
-      - name: Setup packwiz-installer
-        run: |
-          wget https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar
 
       - name: Get server mods
         run: |
@@ -45,11 +39,11 @@ jobs:
       - name: Upload server mods
         uses: actions/upload-artifact@v3
         with:
-          name: Server Mods
+          name: server-mods
           path: server/
 
       - name: Upload client mods
         uses: actions/upload-artifact@v3
         with:
-          name: Client Mods
+          name: client-mods
           path: client/
