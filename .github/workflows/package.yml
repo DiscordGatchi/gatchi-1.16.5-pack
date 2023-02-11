@@ -51,7 +51,7 @@ jobs:
   test:
     name: Test Server & Generate Config
     runs-on: ubuntu-latest
-    needs: release
+    needs: mods
 
     steps:
       - name: Checkout code
