@@ -7,10 +7,12 @@
 !README.md
 
 # client stuff
-!bin
 !config/
 !mods/
 !shaderpacks/
+!bin/minecraft.jar
+!bin/version.json
+!bin/1.16.5.json
 
 # server stuff
 !server/config
@@ -18,4 +20,5 @@
 !server/eula.txt
 !server/server-icon.png
 !server/server.properties
-!server/fabric-server-launcher-1.19.3.jar
+!server/fabric-1.16.5-server.jar
+!server/run.dev.ps1
