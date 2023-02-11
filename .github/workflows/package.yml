@@ -57,26 +57,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Download server mods
-        uses: actions/download-artifact@v3
-        with:
-          name: server-mods
-          path: server/
-
-      - name: Run server
-        run: |
-          docker run \
-          -v $(pwd)/server:/data \
-          -e TYPE=FABRIC \
-          -e VERSION=1.18.2 \
-          -e MEMORY=4G \
-          -e ENABLE_AUTOSTOP=TRUE \
-          -e AUTOSTOP_TIMEOUT_INIT=1 \
-          -e EULA=TRUE \
-          itzg/minecraft-server
-
-      - name: Check server folder
-        run: ls server
+#      - name: Download server mods
+#        uses: actions/download-artifact@v3
+#        with:
+#          name: server-mods
+#          path: server/
+#
+#      - name: Run server
+#        run: |
+#          docker run \
+#          -v $(pwd)/server:/data \
+#          -e TYPE=FABRIC \
+#          -e VERSION=1.18.2 \
+#          -e MEMORY=4G \
+#          -e ENABLE_AUTOSTOP=TRUE \
+#          -e AUTOSTOP_TIMEOUT_INIT=1 \
+#          -e EULA=TRUE \
+#          itzg/minecraft-server
+#
+#      - name: Check server folder
+#        run: ls server
 
   release:
     name: Release & Upload Zipped Mod Files
