@@ -91,13 +91,23 @@ hash = "c207acc93f24a61d609501c8764be15fa4d52bfbee9c316b828e7cf8442dce90"
 metafile = true
 
 [[files]]
+file = "mods/dramatic-doors.pw.toml"
+hash = "e6a2c2024ec4207e9d12f65ecd1a99a55d4bfec671d91c5ea172bb879208bb78"
+metafile = true
+
+[[files]]
+file = "mods/drippy-loading-screen.pw.toml"
+hash = "83199d5841992f58a4064f689f097c0a6e21a34b236a96fe6ab43a68593a24ce"
+metafile = true
+
+[[files]]
 file = "mods/etched.pw.toml"
 hash = "5c5d020b4ed90f00b261ffecef052319f1df5ab5f4197158d3e3abb9ffcfd8c1"
 metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "cf2801fb6961b98ba447381c84e9c86dc76604000e4a94b1fbef7da20cfd520b"
+hash = "f441da2ee20b66f7a72e476057f56f851550168ea4fea436abf674f45dc7e79b"
 metafile = true
 
 [[files]]
@@ -108,6 +118,11 @@ metafile = true
 [[files]]
 file = "mods/factions.pw.toml"
 hash = "0e9675adb3dd9702168b1421a947bebf1e805a34173bca31b248faf0a7e4680a"
+metafile = true
+
+[[files]]
+file = "mods/fancymenu.pw.toml"
+hash = "ca4c1b310fc3666903dd989a988661432e52d74a34c7e1f357c65bf9c7a5e944"
 metafile = true
 
 [[files]]
@@ -126,6 +141,11 @@ hash = "ef482a5d506e2a86ceef718953c165b3bdb585c1ba3f1364f373c441ce2f2ee2"
 metafile = true
 
 [[files]]
+file = "mods/inmis-back-pack-mod-retextured.pw.toml"
+hash = "74283df718319f5c1df266ca191f501c2b09791e3139af3ab249d160d27b9ec7"
+metafile = true
+
+[[files]]
 file = "mods/jade.pw.toml"
 hash = "da079c4953fc1023fdeb3fcdba216c76dd9958c9cd30ed5b738932e7f6563a0c"
 metafile = true
@@ -133,6 +153,11 @@ metafile = true
 [[files]]
 file = "mods/jamlib.pw.toml"
 hash = "4aaca2ff5a41c228fab619d11241204df5d5eb73e32a9fc7a26d4b98f34e7a5b"
+metafile = true
+
+[[files]]
+file = "mods/konkrete.pw.toml"
+hash = "8001814e0b6f5546d8a345ef813b8fd010ce5d506a531d44c22227cab4f478d6"
 metafile = true
 
 [[files]]
