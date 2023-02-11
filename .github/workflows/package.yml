@@ -50,19 +50,6 @@ jobs:
   test:
     name: Test Server & Generate Config
     runs-on: ubuntu-latest
-    needs: mods
-
-    container:
-      image: itzg/minecraft-server
-      volumes:
-        - ${{ github.workspace }}/server:/data
-      env:
-        TYPE: FABRIC
-        VERSION: 1.18.2
-        MEMORY: 4G
-        ENABLE_AUTOSTOP: TRUE
-        AUTOSTOP_TIMEOUT_INIT: 1
-        EULA: TRUE
 
     steps:
       - name: Checkout code
@@ -74,8 +61,10 @@ jobs:
           name: server-mods
           path: server/
 
-      - name: ok what now
-        run: ls . server
+      - name: Run server
+        run: |
+        docker run -v $(pwd)/server:/data -e TYPE=FABRIC -e VERSION=1.18.2 -e ENABLE_AUTOSTOP=TRUE -e AUTOSTOP_TIMEOUT_INIT=1 -e EULA=TRUE -e
+MEMORY=4G itzg/minecraft-server
 
-      # - name: Allow Git
-      #   run: git config --global --add safe.directory $(pwd)
+      - name: Check server folder
+        run: ls server
