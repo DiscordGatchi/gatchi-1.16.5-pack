@@ -1,0 +1,13 @@
+name = "Gatchi Pack"
+author = "Gatchi"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "f17b47c33a28d6ecd072135952967cf4c7cefa355a114ded0b49cdb319e1b85a"
+
+[versions]
+fabric = "0.14.14"
+minecraft = "1.18.2"

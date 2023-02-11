@@ -1,0 +1,13 @@
+name = "Ok Zoomer"
+filename = "okzoomer-5.0.0-beta.6+1.18.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "13cb5ed681404eb17de4c9b7236e4515ad7073bc"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3742129
+project-id = 354047

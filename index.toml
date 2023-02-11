@@ -1,0 +1,181 @@
+hash-format = "sha256"
+
+[[files]]
+file = "mods/adorn.pw.toml"
+hash = "e59138ddd4931750b1e9c0eebc707eeb4ed08d8e2e7edefdc6cc0046505b9e5e"
+metafile = true
+
+[[files]]
+file = "mods/architectury-api.pw.toml"
+hash = "7c32561dc768e8acb98c8dfe323fbaa167c7a0d1c9b6c4a07af5e3e6ab0e539e"
+metafile = true
+
+[[files]]
+file = "mods/artifacts-fabric.pw.toml"
+hash = "cd5ae872e2a98bf094c387bd2ad034859427757fe77354838c37c3dc7f9d358c"
+metafile = true
+
+[[files]]
+file = "mods/bclib.pw.toml"
+hash = "2f5ef6eda6aa829f6fc70cc4d16da89acebc933709d666fd382d848c841b6c86"
+metafile = true
+
+[[files]]
+file = "mods/betteranimalsplus.pw.toml"
+hash = "f0cc2c89283265812873e01b65d5603fc5b525230259eb8993da0b41e7e3341a"
+metafile = true
+
+[[files]]
+file = "mods/betterend.pw.toml"
+hash = "3f1a94dc7555d19869312ad0218e97a15505f77a1b2f1228dc718e238a4b5c53"
+metafile = true
+
+[[files]]
+file = "mods/betternether.pw.toml"
+hash = "4282b7fa7650440b13dc25a7a3f9433b69f4e2701a95315629a8b1e98e304891"
+metafile = true
+
+[[files]]
+file = "mods/blockus.pw.toml"
+hash = "333ba62ec673100991f9c654b7e67a37b8394d66dc29453d22df83a9c2212432"
+metafile = true
+
+[[files]]
+file = "mods/campanion.pw.toml"
+hash = "355321d8612c31f93629f4c7c4b7cc426c5a1767e3fd17c355517a510e9f515d"
+metafile = true
+
+[[files]]
+file = "mods/carrier.pw.toml"
+hash = "91325a1416599cdd975e90b1ac2435f6c75b6afc7e56b30e9582567d2b02e216"
+metafile = true
+
+[[files]]
+file = "mods/cc-restitched.pw.toml"
+hash = "68d97d7c43f28d54f75e4acfdcfc05c3c963739d438892d8d84c68ebc9d181bf"
+metafile = true
+
+[[files]]
+file = "mods/cloth-config.pw.toml"
+hash = "8f07b2408013a7217caacec87c977635fdf94eb21a10bf281f2bba67ff7c4dc1"
+metafile = true
+
+[[files]]
+file = "mods/collective.pw.toml"
+hash = "099442ad6e78f0008d5d5c9b5eaa731cc072ba97c419bb48b53d49511747ca71"
+metafile = true
+
+[[files]]
+file = "mods/create-fabric.pw.toml"
+hash = "8fba0e4ab902db91aa0ea239ca65710fdae38d31bae0acf1920002e48ac03ff9"
+metafile = true
+
+[[files]]
+file = "mods/croptopia.pw.toml"
+hash = "05d4df9be378eb388f9aaa8ec0377e5c5fe919dbca228a287767176408205ae3"
+metafile = true
+
+[[files]]
+file = "mods/fabric-api.pw.toml"
+hash = "cf2801fb6961b98ba447381c84e9c86dc76604000e4a94b1fbef7da20cfd520b"
+metafile = true
+
+[[files]]
+file = "mods/fabric-language-kotlin.pw.toml"
+hash = "617ad00be9c1d9df4cd143bae57279e63d744e3441774e633d421ac5daccc955"
+metafile = true
+
+[[files]]
+file = "mods/farmers-delight-fabric.pw.toml"
+hash = "f5a63f7098aff652010fbf06a7cb93ff042fb59345a2b2255f03063499c5951e"
+metafile = true
+
+[[files]]
+file = "mods/feature-nbt-deadlock-be-gone.pw.toml"
+hash = "c178b68d473bba33bf17fccaccd2ec5c76cd68e9e96accda07145d6f7aef2b8c"
+metafile = true
+
+[[files]]
+file = "mods/improved-stations.pw.toml"
+hash = "ef482a5d506e2a86ceef718953c165b3bdb585c1ba3f1364f373c441ce2f2ee2"
+metafile = true
+
+[[files]]
+file = "mods/lazydfu.pw.toml"
+hash = "b59cda50b7fa539aa9783bb8d87b55ca4e05d0269c9f2e2df69fa2134d0e644f"
+metafile = true
+
+[[files]]
+file = "mods/mo-structures.pw.toml"
+hash = "42a48e3344f319b67b4c82550b54cb08e0c3805bc705ce56a9a2cf2fcade3017"
+metafile = true
+
+[[files]]
+file = "mods/modmenu.pw.toml"
+hash = "b4e9564a3b53e008e176341a6e63fcfb33c89eab824fe11c2714d9bc66aa1e32"
+metafile = true
+
+[[files]]
+file = "mods/mouse-wheelie.pw.toml"
+hash = "006b47d99aeceb91de1d9b4e5c42ff9822048b3228f3872facc46116832fa9e7"
+metafile = true
+
+[[files]]
+file = "mods/oh-the-biomes-youll-go-fabric.pw.toml"
+hash = "91e6ca5321ae6fa135d921fc2c56b0e98c1fb01ec0f296906b95200222eb62d6"
+metafile = true
+
+[[files]]
+file = "mods/ok-zoomer.pw.toml"
+hash = "a575be374eaf8c1b7b8851c54af4e439cb572b1b16d5317e098b27dcb5d98b03"
+metafile = true
+
+[[files]]
+file = "mods/repurposed-structures-fabric.pw.toml"
+hash = "2a3e59e6c7d3c87985979d01cffb6b0d0bf89d9c71c176ec4e3bcc4f978ea978"
+metafile = true
+
+[[files]]
+file = "mods/roughly-enough-items.pw.toml"
+hash = "97758fded746824a20f0a14144b071f7f74f53b3ddee9519f432bbaa7c0fe206"
+metafile = true
+
+[[files]]
+file = "mods/simple-voice-chat.pw.toml"
+hash = "3f697b25d81fb1586fbf402667cf8b8023751cdeac944ffc63eb0b4fdb3e75dd"
+metafile = true
+
+[[files]]
+file = "mods/terrablender-fabric.pw.toml"
+hash = "32a91a3014d6ebbd94bfd3b72f2381f0ee079a8e83b0f7d4e66e1a955e32c528"
+metafile = true
+
+[[files]]
+file = "mods/trinkets.pw.toml"
+hash = "712e87884c53ad1c8891e7ea384318750051684144972ad11a15c44cf327a864"
+metafile = true
+
+[[files]]
+file = "mods/vanilla-hammers.pw.toml"
+hash = "a2a39fe993ad407531c4d5458bd6e739053f97ec4b57e8dece5452ee35798a56"
+metafile = true
+
+[[files]]
+file = "mods/worldedit.pw.toml"
+hash = "9cba8becd46d571b7576be0d34fea48a7c38f5745265186c7baf1c79251ef373"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-minimap.pw.toml"
+hash = "648bb45655481728fba68136f32c12a951ffef6985b2858c0065646c826cb40d"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-world-map.pw.toml"
+hash = "1e898ca5b525e9ff40758db421d502c99ada05f97e660e9f83dc75e7b8467b51"
+metafile = true
+
+[[files]]
+file = "mods/your-items-are-safe.pw.toml"
+hash = "c1fdb366bfd528692eecf6d238224e56d453b1b37d305c056950a0915d247e6c"
+metafile = true
