@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "basePower": 20,
+  "memberPower": 20,
+  "claimWeight": 5,
+  "maxFactionSize": -1,
+  "safeTicksToWarp": 1000,
+  "powerDeathPenalty": 10,
+  "ticksForPower": 12000,
+  "ticksForPowerReward": 1,
+  "requiredBypassLevel": 2,
+  "home": "CLAIMS",
+  "radarEnabled": true,
+  "friendlyFireEnabled": false,
+  "chatModificationEnabled": true,
+  "factionSafe": "ENABLED",
+  "factionSafeDouble": true
+}
