@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-cd /home/minecraft/server || exit 1
-
 docker container stop minecraft
 docker container rm minecraft
 git pull
