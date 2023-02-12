@@ -188,4 +188,4 @@ jobs:
 
         - name: Deploy
           run: |
-            ssh production "cd /home/minecraft/repository && chmod +x ./deploy.sh && ./deploy.sh && chmod -x ./deploy.sh"
+            ssh production "cd /home/minecraft/server && chmod +x ./deploy.sh && ./deploy.sh && chmod -x ./deploy.sh"

@@ -9,7 +9,8 @@ docker run -d -v \
   /home/minecraft/server:/data \
   -e TYPE=FABRIC \
   -e VERSION=1.18.2 \
-  -e MEMORY=8G \
+  -e MEMORY=6G \
   -e EULA=TRUE \
   -p 25565:25565 \
+  --name minecraft \
   -e "PACKWIZ_URL=https://discordgatchi.github.io/the-gatchi-pack/pack.toml" itzg/minecraft-server
