@@ -1,0 +1,13 @@
+name = "Inmis Backpack Retextured"
+filename = "inmis_retextured-2.5.2-1.18.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "98ccb2d6776e7922ddfd184f4ccbeee841041291"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4049630
+project-id = 693647

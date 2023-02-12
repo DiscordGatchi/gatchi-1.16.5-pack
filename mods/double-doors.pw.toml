@@ -1,0 +1,13 @@
+name = "Double Doors"
+filename = "doubledoors-1.18.2-4.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/JrvR9OHr/versions/7Hq4Vu1h/doubledoors-1.18.2-4.1.jar"
+hash-format = "sha1"
+hash = "96a044e7b66121aacea70e02b9c6b3b292500e36"
+
+[update]
+[update.modrinth]
+mod-id = "JrvR9OHr"
+version = "7Hq4Vu1h"
