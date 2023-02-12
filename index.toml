@@ -166,16 +166,6 @@ hash = "b59cda50b7fa539aa9783bb8d87b55ca4e05d0269c9f2e2df69fa2134d0e644f"
 metafile = true
 
 [[files]]
-file = "mods/lightmans-currency.pw.toml"
-hash = "83d5de509020b5eaca8fa945f796f7190143373de9dbf11d19d3efbda56aa013"
-metafile = true
-
-[[files]]
-file = "mods/mcdiscordchat.pw.toml"
-hash = "751086255d0b621d234614449618ce01108bb36c7d7bf305b8096621445d4454"
-metafile = true
-
-[[files]]
 file = "mods/midnightcontrols.pw.toml"
 hash = "1151475f35a31dac4ce1d33c77a3fab968f1fe70be98676523108f9d7f38787d"
 metafile = true
@@ -233,11 +223,6 @@ metafile = true
 [[files]]
 file = "mods/simple-voice-chat.pw.toml"
 hash = "3f697b25d81fb1586fbf402667cf8b8023751cdeac944ffc63eb0b4fdb3e75dd"
-metafile = true
-
-[[files]]
-file = "mods/styled-chat.pw.toml"
-hash = "1a1252f950fda13a51c64bf839aa0b5e6eb980610334791d0c300125acdb5757"
 metafile = true
 
 [[files]]
