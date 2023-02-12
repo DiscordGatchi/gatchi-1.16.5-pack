@@ -130,7 +130,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: Create mrpack
-        run: packwiz mr export --pack-file ../pack.toml -o client.mrpack
+        run: packwiz mr export --pack-file pack.toml -o client.mrpack
 
       - name: Upload mrpack
         uses: actions/upload-release-asset@v1
