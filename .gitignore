@@ -2,24 +2,11 @@
 *.zip
 *.mrpack
 
-client/mods
-client/packwiz*
+client
+server
 
-server/mods
-server/packwiz*
-server/libraries
-server/logs
-server/versions
-server/world
-server/.*
-server/eula.txt
-server/fabric-server*.jar
-
-server/banned-players.json
-server/banned-ips.json
-server/ops.json
-server/usercache.json
-server/whitelist.json
+!configs/client
+!configs/server
 
 # IDE specific
 .idea
