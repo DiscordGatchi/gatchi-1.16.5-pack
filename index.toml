@@ -6,11 +6,6 @@ hash = "e59138ddd4931750b1e9c0eebc707eeb4ed08d8e2e7edefdc6cc0046505b9e5e"
 metafile = true
 
 [[files]]
-file = "mods/almost-unified.pw.toml"
-hash = "af5f238512ddce293fe81e507bcbaf7f68a7964d8a660e5805be155eb4af20a6"
-metafile = true
-
-[[files]]
 file = "mods/architectury-api.pw.toml"
 hash = "7c32561dc768e8acb98c8dfe323fbaa167c7a0d1c9b6c4a07af5e3e6ab0e539e"
 metafile = true

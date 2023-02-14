@@ -4,7 +4,8 @@
 
 client/
 server/
-server/server.properties
+!configs/client/
+!configs/server/
 
 # IDE specific
 .idea
