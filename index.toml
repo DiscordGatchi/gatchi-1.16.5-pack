@@ -96,6 +96,11 @@ hash = "83199d5841992f58a4064f689f097c0a6e21a34b236a96fe6ab43a68593a24ce"
 metafile = true
 
 [[files]]
+file = "mods/dynamic-fps.pw.toml"
+hash = "ffc1f6d147394bfeb65b2fb9a78ca7d3365cbf5192c31af1312bc899190e4e34"
+metafile = true
+
+[[files]]
 file = "mods/etched.pw.toml"
 hash = "5c5d020b4ed90f00b261ffecef052319f1df5ab5f4197158d3e3abb9ffcfd8c1"
 metafile = true
@@ -131,8 +136,18 @@ hash = "c178b68d473bba33bf17fccaccd2ec5c76cd68e9e96accda07145d6f7aef2b8c"
 metafile = true
 
 [[files]]
+file = "mods/ferrite-core.pw.toml"
+hash = "f19e328fe42f91d1b65e244ee5bcf70f1e5305a27278945098ea85af82e05d0d"
+metafile = true
+
+[[files]]
 file = "mods/improved-stations.pw.toml"
 hash = "ef482a5d506e2a86ceef718953c165b3bdb585c1ba3f1364f373c441ce2f2ee2"
+metafile = true
+
+[[files]]
+file = "mods/indium.pw.toml"
+hash = "fdebc54ee80be90757fae74011431710cf07d1df5ffaf81678a5c2c8f2d32a2b"
 metafile = true
 
 [[files]]
@@ -156,8 +171,28 @@ hash = "8001814e0b6f5546d8a345ef813b8fd010ce5d506a531d44c22227cab4f478d6"
 metafile = true
 
 [[files]]
+file = "mods/lambdynamiclights.pw.toml"
+hash = "3c3f1788a62da45c975e150cc851ca6639c7d0dec10c43c9500f933ad15b1768"
+metafile = true
+
+[[files]]
 file = "mods/lazydfu.pw.toml"
 hash = "b59cda50b7fa539aa9783bb8d87b55ca4e05d0269c9f2e2df69fa2134d0e644f"
+metafile = true
+
+[[files]]
+file = "mods/leaves-us-in-peace.pw.toml"
+hash = "21da451438c4b95811be685f967b800f0672ac0096bf9a4fc80e08db52902005"
+metafile = true
+
+[[files]]
+file = "mods/lithium.pw.toml"
+hash = "9480f9e11e91eb82ba616c5c622c218d7b7ceff6599a3348d557eb1a1ddd41f9"
+metafile = true
+
+[[files]]
+file = "mods/memoryleakfix.pw.toml"
+hash = "f61810be98ef52436d3355ecfa4354bc47d142cbe9468fbd14415e5bc6d66125"
 metafile = true
 
 [[files]]
@@ -183,6 +218,11 @@ metafile = true
 [[files]]
 file = "mods/mouse-tweaks.pw.toml"
 hash = "ce135ca85c8b940d23d2970ae1032a2a8f572a6b9f98d251ef671c5186a57ff8"
+metafile = true
+
+[[files]]
+file = "mods/notenoughcrashes.pw.toml"
+hash = "d73bf0bf40f47363ba814b2cccc8d512f734cebb4e8a555177291831313d9a5f"
 metafile = true
 
 [[files]]
@@ -218,6 +258,16 @@ metafile = true
 [[files]]
 file = "mods/simple-voice-chat.pw.toml"
 hash = "3f697b25d81fb1586fbf402667cf8b8023751cdeac944ffc63eb0b4fdb3e75dd"
+metafile = true
+
+[[files]]
+file = "mods/sodium.pw.toml"
+hash = "d1480fd38a1ac53311baa2d57b92556834372f6ac04c355169441df9a59a161c"
+metafile = true
+
+[[files]]
+file = "mods/starlight.pw.toml"
+hash = "99f9628800ccabd189b9bb28859f01caaf9ad672f247ae875e3eaa5f965f9406"
 metafile = true
 
 [[files]]
